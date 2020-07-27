@@ -13,7 +13,8 @@
 
     <p>Edit ton potin via le formulaire ci-dessous :</p>
     <form action='/gossips/edit/' method='POST'>
-      <p>Potin n° <span name='gossip_id'><%= id %></span> </p>
+      <p>Potin n° <input value="<%= id%>" type='number' name='gossip_id' readonly></p>
+
       <p>Author : <input value="<%= gossips.author%>" type='text' name='gossip_author' readonly></p>
       <p>New potin : <input type='text' name='gossip_content' /><br/></p>
       <input type='submit' />
