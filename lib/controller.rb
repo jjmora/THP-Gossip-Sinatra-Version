@@ -18,7 +18,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/gossips/:id' do
-    erb :show, locals: {gossips: Gossip.all}
+    #erb :show, locals: {gossips: Gossip.all}
+    erb :show, locals: {gossips: Gossip.find(params['id']), gossips_id: params['id']}
+    
   end
 
   #run! if app_file == $0 => Inutil si usamos el config.ru

@@ -9,11 +9,10 @@
   </head>
   <body>
     <h1>PAGE POTIN</h1>
-    <% id = params["id"].to_i - 1 %>
-    <p>Voici la page du potin number <span><%= id + 1 %></span></p>
-    
-    <p>Son auteur : ==<span><%= gossips[id].author%></span>==</p> 
-    <p>Le contenu du potin : ==<span><%= gossips[id].content%></span>==</p>
+    <% id = gossips_id %>
+    <p>Voici la page du potin n° <%= id %></p>
+    <p>Son auteur : ==<span><%= gossips.author%></span>==</p>
+    <p>Le contenu du potin : ==<span><%= gossips.content%></span>==</p>
 
     <a href="/">Revenir à la page des potins</a>
       

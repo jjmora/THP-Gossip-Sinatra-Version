@@ -26,6 +26,6 @@ class Gossip
   end
 
   def self.find(id)
-    return id
+    self.all[id.to_i]
   end
 end

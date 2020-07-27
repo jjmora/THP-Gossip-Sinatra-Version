@@ -5,10 +5,10 @@
   <body>
     <h1>Mon super site de gossip !</h1>
     <h2>Best gossips from THP</h2>
-    <p>There is no gossip yet. Follow the link to create a new Gossip</p>
+    <p>Follow the link to create a new Gossip</p>
     <a href="/gossips/new/">New Gossip</a>
     <br />
-    <% i = 1%>
+    <% i = 0%>
     <% gossips.each do |gossip| %>
       <p>
         <%= gossip.author %><br/>
