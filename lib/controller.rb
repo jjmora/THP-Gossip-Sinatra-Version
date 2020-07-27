@@ -1,7 +1,7 @@
 # require 'bundler'  => Inutil si usamos el config.ru
 # Bundler.require    => Inutil si usamos el config.ru
 require 'gossip'
-#require 'comment'
+require 'comment'
 
 class ApplicationController < Sinatra::Base
 
@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/gossips/new/' do
-    Gossip.new(params["gossip_author"], params["gossip_content"]).save
+    Gossip.new(params["gossip_author"], params["gossip_content"],'').save
     redirect '/'
   end
 
@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/:id/edit/' do
-    Gossip.update(params["gossip_id"], params["gossip_author"],params["gossip_content"])
+    Gossip.update(params["gossip_id"], params["gossip_author"],params["gossip_content"], params["comment_content"])
     redirect '/'
   end
 
@@ -31,10 +31,10 @@ class ApplicationController < Sinatra::Base
     erb :edit, locals: {gossips: Gossip.find(params['id']), gossips_id: params['id']}
   end
 
-  # post '/gossips/:id/' do
-  #   Comment.new(params["comment_content"], params["gossip_id"]).save
-  #   redirect '/'
-  # end
+  post '/gossips/:id/' do
+    Comment.new(params["comment_content"], params["gossip_id"]).update(params['id'],params["comment_content"])
+    redirect '/'
+  end
 
   #run! if app_file == $0 => Inutil si usamos el config.ru
 

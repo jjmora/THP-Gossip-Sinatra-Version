@@ -12,8 +12,9 @@
     <% gossips.each do |gossip| %>
       <p>
         <%= gossip.author %><br/>
-        <%= gossip.content %>
-        <a href="/gossips/<%= i %>">Link</a>
+        <%= gossip.content %><br />
+        <p>Comments : <%= gossip.comments %></p>
+        <a href="/gossips/<%= i %>">New / Edit</a>
         <% i += 1 %>
       </p>
     <% end %>

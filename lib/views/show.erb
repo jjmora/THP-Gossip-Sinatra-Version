@@ -15,6 +15,12 @@
     <p>Le contenu du potin : ==<span><%= gossips.content%></span>==</p>
     <a href="/<%= id %>/edit/">Editer le potin</a>
     <a href="/">Revenir à la page des potins</a>
-      
+    <br />
+    <h2>Tu as de commentaires a ce potin? </h2>
+    <form action='/gossips/<%= id %>/' method='POST'>
+      <input type='text' name='gossip_id' value='<%= id %>' readonly>
+      <input type='text' name='comment_content'/><br/>
+      <input type='submit' />
+    </form>
   </body>
 </html>
