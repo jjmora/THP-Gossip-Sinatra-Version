@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+ruby '2.5.1'
+gem 'pry'
+gem 'sinatra'
+gem 'shotgun'
+#gem 'dotenv'
+#gem 'rspec'
+#gem 'rubocop', '~> 0.57.2'
