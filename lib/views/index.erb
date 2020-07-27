@@ -7,5 +7,14 @@
     <h2>Best gossips from THP</h2>
     <p>There is no gossip yet. Follow the link to create a new Gossip</p>
     <a href="/gossips/new/">New Gossip</a>
+    <br />
+
+    <% gossips.each do |gossip| %>
+        <p>
+          <%= gossip.author %><br/>
+          <%= gossip.content %>
+        </p>
+      <% end %>
+
   </body>   
 </html>
