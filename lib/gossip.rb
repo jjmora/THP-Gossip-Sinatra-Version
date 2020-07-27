@@ -29,27 +29,16 @@ class Gossip
     self.all[id.to_i]
   end
 
-  def self.update(author, content)
-    print 'Author'
-    puts author
-    print 'Content'
-    puts content
+  def self.update(id, author, content)
     all_gossips = self.all
-    p all_gossips
-    match = all_gossips.index(all_gossips.find{|x| x.author == author})
-    
-    match = match.to_i
-    puts match
-    all_gossips[match].content = content
-
-    p all_gossips
+    id = id.to_i
+    all_gossips[id].content = content
 
     CSV.open("db/gossip.csv", "wb") do |csv|
       all_gossips.each do |x|
         csv << [x.author, x.content]
       end
     end
-
   end
 
 end
