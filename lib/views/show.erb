@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Show</title>
+    <style>
+      span{
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PAGE POTIN</h1>
+    <% id = params["id"].to_i - 1 %>
+    <p>Voici la page du potin number <span><%= id + 1 %></span></p>
+    
+    <p>Son auteur : ==<span><%= gossips[id].author%></span>==</p> 
+    <p>Le contenu du potin : ==<span><%= gossips[id].content%></span>==</p>
+
+    <a href="/">Revenir à la page des potins</a>
+      
+  </body>
+</html>

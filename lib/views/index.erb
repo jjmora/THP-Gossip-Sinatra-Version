@@ -8,13 +8,15 @@
     <p>There is no gossip yet. Follow the link to create a new Gossip</p>
     <a href="/gossips/new/">New Gossip</a>
     <br />
-
+    <% i = 1%>
     <% gossips.each do |gossip| %>
-        <p>
-          <%= gossip.author %><br/>
-          <%= gossip.content %>
-        </p>
-      <% end %>
+      <p>
+        <%= gossip.author %><br/>
+        <%= gossip.content %>
+        <a href="/gossips/<%= i %>">Link</a>
+        <% i += 1 %>
+      </p>
+    <% end %>
 
   </body>   
 </html>

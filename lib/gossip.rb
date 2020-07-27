@@ -25,4 +25,7 @@ class Gossip
     return all_gossips
   end
 
+  def self.find(id)
+    return id
+  end
 end
